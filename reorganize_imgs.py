@@ -35,7 +35,12 @@ def list_files_in_folder(folder_path, output, i):
                     output[i - 1].append((item, article_n, img_n))
                     print(article_n + "_" + img_n)
                     shutil.copy(item, Path.cwd() / "imgs" / (article_n + "_" + img_n + str(item)[-4:]))
-        
+                else:
+                    article_n = str(item)[str(item).find("article ") + 8:str(item).find("images") - 1]
+                    img_n = str(item)[str(item).rfind("image") + 5:-4]
+                    #output[i - 1].append((item, article_n, img_n))
+                    #print(article_n + "_" + img_n)
+                    shutil.copy(item, Path.cwd() / "gifs" / (article_n + "_" + img_n + str(item)[-4:]))
         return
     
     except PermissionErrr:
