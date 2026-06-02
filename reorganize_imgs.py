@@ -34,7 +34,7 @@ def list_files_in_folder(folder_path, output, i):
                     img_n = str(item)[str(item).rfind("image") + 5:-4]
                     output[i - 1].append((item, article_n, img_n))
                     print(article_n + "_" + img_n)
-                    shutil.copy(item, Path.cwd() / "output" / (article_n + "_" + img_n + str(item)[-4:]))
+                    shutil.copy(item, Path.cwd() / "imgs" / (article_n + "_" + img_n + str(item)[-4:]))
         
         return
     
